@@ -3,19 +3,20 @@ spring:
     name: '@project.artifactId@'
   cloud:
     config:
-      label: dev
+      label: master
       enabled: true
       server:
         git:
-          uri: ${GIT_URL:****************}
-          username: ${GIT_USER:************}
-          password: ${GIT_PASS:***********}
+          uri: ${GIT_URL:https://github.com/aiZyyy/config-service.git}
+          username: ${GIT_USER:13100650510}
+          password: ${GIT_PASS:zy123aaa!}
+          search-paths: respo
   # 默认的RabbitMQ服务器
   rabbitmq:
-    host: ${RABBITMQ_HOST:127.0.0.1}
+    host: ${RABBITMQ_HOST:dev.rabbitmq.i.sixi.com}
     port: ${RABBITMQ_PORT:5672}
-    username: ${RABBITMQ_USER:guest}
-    password: ${RABBITMQ_PASS:guest}
+    username: ${RABBITMQ_USER:root}
+    password: ${RABBITMQ_PASS:root}
 
 server:
   port: ${PORT:8083}
