@@ -6,6 +6,7 @@
     <groupId>com.itzy</groupId>
     <artifactId>micro-service-api-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>micro-service-api-parent</name>
     <description>章鱼哥微服务API父工程</description>
 
