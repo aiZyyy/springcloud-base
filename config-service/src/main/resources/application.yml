@@ -7,16 +7,16 @@ spring:
       enabled: true
       server:
         git:
-          uri: ${GIT_URL:https://github.com/aiZyyy/config-service.git}
+          uri: ${GIT_URL:https://github.com/aiZyyy/zy-config.git}
           username: ${GIT_USER:13100650510}
           password: ${GIT_PASS:zy123aaa!}
-          search-paths: respo
+#          search-paths: respo
   # 默认的RabbitMQ服务器
   rabbitmq:
-    host: ${RABBITMQ_HOST:dev.rabbitmq.i.sixi.com}
+    host: ${RABBITMQ_HOST:127.0.0.1}
     port: ${RABBITMQ_PORT:5672}
-    username: ${RABBITMQ_USER:root}
-    password: ${RABBITMQ_PASS:root}
+    username: ${RABBITMQ_USER:guest}
+    password: ${RABBITMQ_PASS:guest}
 
 server:
   port: ${PORT:8083}
