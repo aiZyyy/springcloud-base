@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # 服务组名称(包名第三段)
-GROUP='user'
+GROUP='erp'
 # 服务名称(包名第四段)
 SERVER='adminservice'
 # 指定对应文件生成目录(如果不是微服务项目 请自行修改完整包名)
@@ -8,7 +8,7 @@ TARGET_ENTITY="com.itzy.${GROUP}.${SERVER}.domain.entity"
 TARGET_MAPPER="com.itzy.${GROUP}.${SERVER}.mapper"
 
 # 数据库地址
-DB_HOST="127.0.0.1"
+DB_HOST="dev.mysql.i.sixi.com"
 # 数据库端口
 DB_PORT=3306
 # 数据库名称
@@ -60,8 +60,8 @@ cat > generator.xml <<EOF
         <property name="beginningDelimiter" value="\`"/>
         <property name="endingDelimiter" value="\`"/>
         <!--启用Lombok插件-->
-        <plugin type="pw.yumc.mybatis.generator.plugins.LombokPlugin"/>
-        <commentGenerator>
+        <plugin type="com.itzy.commonplugin.LombokPlugin"/>
+        <commentGenerator type="com.itzy.commonplugin.CommentGenerator">
             <!--去除自动生成的注释-->
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
