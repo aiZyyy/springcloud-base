@@ -12,14 +12,11 @@ import java.util.function.Consumer;
 /**
  * Created with IntelliJ IDEA
  * 断言判断工具类
- *
- * @author 喵♂呜
- * Created on 2017/9/1 10:49.
  */
-public class Assert<T> {
+public class AssertUtil<T> {
     private T t;
 
-    public Assert(T t) {
+    public AssertUtil(T t) {
         this.t = t;
     }
 
@@ -40,7 +37,7 @@ public class Assert<T> {
      */
     public void runNonEmpty(Consumer<? super T> consumer) {
         if (Objects.nonNull(t)) {
-            Assert.require(t instanceof Collection, "对象必须为集合才能使用 runNonEmpty");
+            AssertUtil.require(t instanceof Collection, "对象必须为集合才能使用 runNonEmpty");
             runIsTrue(!((Collection) t).isEmpty(), () -> consumer.accept(t));
         }
     }
@@ -77,8 +74,8 @@ public class Assert<T> {
      *         泛型
      * @return 包装后的Assert
      */
-    public static <T> Assert<T> of(T value) {
-        return new Assert<>(value);
+    public static <T> AssertUtil<T> of(T value) {
+        return new AssertUtil<>(value);
     }
 
     /**
@@ -207,7 +204,7 @@ public class Assert<T> {
      * @param message
      *         异常消息
      * @deprecated 简化语义 <br/>
-     * 请使用 {@link Assert#forbidden(boolean, String)}
+     * 请使用 {@link AssertUtil#forbidden(boolean, String)}
      */
     @Deprecated
     public static void requireTrue(boolean result, String message) {
@@ -222,7 +219,7 @@ public class Assert<T> {
      * @param message
      *         异常消息
      * @deprecated 简化语义 <br/>
-     * 请使用 {@link Assert#forbidden(boolean, String)}
+     * 请使用 {@link AssertUtil#forbidden(boolean, String)}
      */
     @Deprecated
     public static void isForbidden(boolean result, String message) {
@@ -237,7 +234,7 @@ public class Assert<T> {
      * @param message
      *         异常消息
      * @deprecated 简化语义 <br/>
-     * 请使用 {@link Assert#forbidden(boolean, String, Integer)}
+     * 请使用 {@link AssertUtil#forbidden(boolean, String, Integer)}
      */
     @Deprecated
     public static void isForbidden(boolean result, String message, Integer errCode) {

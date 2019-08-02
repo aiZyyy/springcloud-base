@@ -3,8 +3,8 @@ package com.itzy.commonservice.interceptor;
 import com.alibaba.fastjson.JSON;
 
 import com.itzy.commonservice.exception.handler.GlobalExceptionHandler;
-import com.itzy.commonservice.kits.WebKit;
 import com.itzy.commonservice.utils.KeyValue;
+import com.itzy.commonservice.utils.WebUtil;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
@@ -26,9 +26,6 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Created with IntelliJ IDEA
- *
- * @author MiaoWoo
- * Created on 2018/4/27 9:44.
  */
 @Slf4j
 @Aspect
@@ -69,7 +66,7 @@ public class DebugInterceptor extends HandlerInterceptorAdapter {
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
         StringBuilder str = new StringBuilder();
         str.append("\n===================== DebugInterceptor =====================");
-        str.append("\nRemote   IP        : ").append(WebKit.getClientIP());
+        str.append("\nRemote   IP        : ").append(WebUtil.getClientIP());
         str.append("\nRequest  Method    : ").append(request.getMethod());
         str.append("\nRequest  URL       : ")
                 .append(request.getRequestURI())

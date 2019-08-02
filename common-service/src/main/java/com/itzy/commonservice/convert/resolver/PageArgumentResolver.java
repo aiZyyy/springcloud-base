@@ -12,9 +12,6 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 
 /**
  * Created with IntelliJ IDEA
- *
- * @author 喵♂呜
- * Created on 2017/6/12 19:40.
  */
 @Component
 public class PageArgumentResolver implements HandlerMethodArgumentResolver {

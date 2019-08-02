@@ -1,4 +1,4 @@
-package com.itzy.commonservice.kits;
+package com.itzy.commonservice.utils;
 
 import com.alibaba.fastjson.JSON;
 import lombok.SneakyThrows;
@@ -9,12 +9,14 @@ import java.util.*;
 import java.util.function.Function;
 
 /**
- * @author MiaoWoo
+ * @Author: ZY
+ * @Date: 2019/8/2 15:37
+ * @Version 1.0
  */
-public class DozerBeanKit {
+public class DozerBeanUtil {
     private static DozerBeanMapper map = new DozerBeanMapper();
 
-    private DozerBeanKit() {
+    private DozerBeanUtil() {
     }
 
     public static <T> T map(Object source, Class<T> cls) {

@@ -28,8 +28,6 @@ import java.util.Set;
 
 /**
  * JSON转换器
- *
- * @author 喵♂呜
  */
 @Component
 public class JsonConverter implements GenericConverter {

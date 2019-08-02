@@ -3,8 +3,8 @@ package com.itzy.commonservice.exception.handler;
 import com.alibaba.fastjson.JSON;
 import com.itzy.commonservice.exception.EntityValidException;
 import com.itzy.commonservice.exception.ForbiddenException;
-import com.itzy.commonservice.kits.WebKit;
 import com.itzy.commonservice.utils.KeyValue;
+import com.itzy.commonservice.utils.WebUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.TypeMismatchException;
@@ -31,10 +31,6 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * @author 袁守忍
- * Create at 2017-06-02
- */
 @Slf4j
 @ControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
@@ -42,7 +38,6 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ResponseBody
     public KeyValue handleForbiddenException(Exception ex) {
         // 禁止访问不用打印异常
-        log.info("拒绝访问: {}", WebKit.getRequestUrl());
         log.info("原因: {}", ex.getMessage());
         return KeyValue.forbidden(ex.getMessage());
     }
@@ -141,8 +136,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     private void doLogger(Throwable ex) {
-        HttpServletRequest request = WebKit.getRequest();
-        String realIp = WebKit.getClientIP();
+        HttpServletRequest request = WebUtil.getRequest();
+        String realIp = WebUtil.getClientIP();
         if (log.isErrorEnabled()) {
             log.info(String.format("\n%-15s %-6s %s %s",
                                    StringUtils.isEmpty(realIp) ? request.getRemoteAddr() : realIp,

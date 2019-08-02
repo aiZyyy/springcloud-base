@@ -16,10 +16,6 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * @author 喵♂呜
- * @since 2017/5/31
- */
 @Configuration
 @ConditionalOnBean(PermissionHandler.class)
 public class PermissionInterceptor extends HandlerInterceptorAdapter {

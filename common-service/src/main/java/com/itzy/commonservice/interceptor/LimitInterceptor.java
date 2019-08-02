@@ -4,8 +4,8 @@ package com.itzy.commonservice.interceptor;
 import com.itzy.commonservice.annotation.RequestLimit;
 import com.itzy.commonservice.interfaces.LoginHandler;
 import com.itzy.commonservice.interfaces.UserHandler;
-import com.itzy.commonservice.kits.WebKit;
 import com.itzy.commonservice.utils.KeyValue;
+import com.itzy.commonservice.utils.WebUtil;
 import lombok.val;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -43,7 +43,7 @@ public class LimitInterceptor extends HandlerInterceptorAdapter {
         if (limit == null || !limit.enable()) {
             return true;
         }
-        String key = "LimitInterceptor:" + request.getRequestURI() + ":" + (loginHandler.isLogin() ? userHandler.getId() : WebKit.getClientIP());
+        String key = "LimitInterceptor:" + request.getRequestURI() + ":" + (loginHandler.isLogin() ? userHandler.getId() : WebUtil.getClientIP());
         String value = redisTemplate.opsForValue().get(key);
         if (!org.springframework.util.StringUtils.isEmpty(value)) {
             KeyValue.forbidden("请勿重复提交!").write(response);

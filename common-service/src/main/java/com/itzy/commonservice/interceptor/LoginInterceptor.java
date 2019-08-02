@@ -17,10 +17,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 /**
- * Created with IntelliJ IDEA
- *
- * @author MiaoWoo
- * Created on 2018/12/4 16:29.
+ * Created with IntelliJ IDEA.
  */
 @Configuration
 @ConditionalOnBean(LoginHandler.class)

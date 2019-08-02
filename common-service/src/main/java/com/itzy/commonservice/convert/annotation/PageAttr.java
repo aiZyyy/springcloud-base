@@ -7,8 +7,6 @@ import java.lang.annotation.Target;
 
 /**
  * Created with IntelliJ IDEA
- * <p>
- * Created on 2017/6/14 13:57.
  */
 @Target(ElementType.PARAMETER)
 @Retention(RetentionPolicy.RUNTIME)

@@ -13,16 +13,15 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 /**
- * Created with IntelliJ IDEA
- *
- * @author 喵♂呜
- * Created on 2018/3/31 11:03.
+ * @Author: ZY
+ * @Date: 2019/8/2 15:31
+ * @Version 1.0
  */
 @Slf4j
 @Configuration
 public class PageHelperConfigurer {
     @Bean(name = "sqlSessionFactory")
-    @ConditionalOnProperty(value = "sixi-micro-service-common.page-helper.enabled", havingValue = "true", matchIfMissing = true)
+    @ConditionalOnProperty(value = "itzy-micro-service-common.page-helper.enabled", havingValue = "true", matchIfMissing = true)
     public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
         log.info("初始化 SqlSessionFactory 设置 PageHelper 分页插件...");
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();

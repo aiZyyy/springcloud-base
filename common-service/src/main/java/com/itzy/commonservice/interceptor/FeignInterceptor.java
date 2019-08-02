@@ -11,9 +11,6 @@ import java.util.Optional;
 
 /**
  * Created with IntelliJ IDEA
- *
- * @author 喵♂呜
- * Created on 2018/3/8 14:59.
  */
 public class FeignInterceptor implements RequestInterceptor {
     @Value("${sixi-micro-service.feign.proxy.header:Cookie,Authorization}")

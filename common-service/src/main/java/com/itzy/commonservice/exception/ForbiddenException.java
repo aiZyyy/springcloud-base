@@ -4,8 +4,6 @@ import lombok.Getter;
 
 /**
  * Created with IntelliJ IDEA
- * <p>
- * Created on 2017/6/13 19:45.
  */
 public class ForbiddenException extends RuntimeException {
     @Getter

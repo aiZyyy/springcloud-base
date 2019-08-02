@@ -12,9 +12,6 @@ import java.util.Arrays;
 
 /**
  * Created with IntelliJ IDEA
- *
- * @author MiaoWoo
- * Created on 2017/6/12 19:18.
  */
 @Component
 public class KeyValueArgumentResolver implements HandlerMethodArgumentResolver {

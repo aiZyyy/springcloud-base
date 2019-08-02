@@ -11,10 +11,9 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
- * Created with IntelliJ IDEA
- *
- * @author MiaoWoo
- * Created on 2018/5/11 12:42.
+ * @Author: ZY
+ * @Date: 2019/8/2 15:31
+ * @Version 1.0
  */
 @Slf4j
 @Configuration
@@ -22,7 +21,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 public class RedisConfigurer {
     @Bean(value = "redisTemplate")
     @ConditionalOnClass(name = "com.alibaba.fastjson.support.spring.GenericFastJsonRedisSerializer")
-    @ConditionalOnProperty(value = "sixi-micro-service-common.redis.fast-json-serializer", havingValue = "true", matchIfMissing = true)
+    @ConditionalOnProperty(value = "itzy-micro-service-common.redis.fast-json-serializer", havingValue = "true", matchIfMissing = true)
     public <V> RedisTemplate<String, V> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         log.info("初始化 RedisTemplate 设置 FastJsonRedisSerializer 默认序列化...");
         RedisTemplate<String, V> redisTemplate = new RedisTemplate<>();

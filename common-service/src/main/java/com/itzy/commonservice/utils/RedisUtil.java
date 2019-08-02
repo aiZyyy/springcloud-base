@@ -1,4 +1,4 @@
-package com.itzy.commonservice.kits;
+package com.itzy.commonservice.utils;
 
 import lombok.Getter;
 import lombok.val;
@@ -11,15 +11,13 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created with IntelliJ IDEA
- * Redis简易工具类
- *
- * @author MiaoWoo
- * Created on 2018/7/18 18:43.
+ * @Author: ZY
+ * @Date: 2019/8/2 15:48
+ * @Version 1.0
  */
 @Configuration
 @ConditionalOnProperty(value = "spring.redis.host")
-public class RedisKit {
+public class RedisUtil {
     @Resource
     private RedisTemplate<String, String> redisTemplate;
     @Getter
@@ -27,7 +25,7 @@ public class RedisKit {
     @Getter
     private Set set;
 
-    public RedisKit(List list, Set set) {
+    public RedisUtil(List list, Set set) {
         this.list = list;
         this.set = set;
     }
@@ -76,9 +74,14 @@ public class RedisKit {
         }
 
         public boolean contains(String key) {
-            val ranges = redisTemplate.opsForList().range(key, 0, -1);
+            val ranges = get(key);
             if (Objects.isNull(ranges)) {return false;}
             return ranges.contains(key);
+        }
+
+        // 查询list从0开始,到index位的值,如果是-1,则表示查询出来所有
+        public java.util.List<String> get(String key){
+            return redisTemplate.opsForList().range(key, 0, -1);
         }
     }
 
@@ -96,9 +99,13 @@ public class RedisKit {
         }
 
         public boolean contains(String key) {
-            val ranges = redisTemplate.opsForSet().members(key);
+            val ranges = get(key);
             if (Objects.isNull(ranges)) {return false;}
             return ranges.contains(key);
+        }
+
+        public java.util.Set<String> get(String key){
+            return redisTemplate.opsForSet().members(key);
         }
     }
 }

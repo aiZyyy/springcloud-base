@@ -10,8 +10,6 @@ import java.lang.reflect.Type;
 
 /**
  * 自定义FastJson消息转换器
- *
- * @author MiaoWoo
  */
 public class CustomFastJsonMessageConverter extends FastJsonHttpMessageConverter {
     @Override

@@ -1,6 +1,6 @@
 package com.itzy.commonservice.dto;
 
-import com.itzy.commonservice.utils.Assert;
+import com.itzy.commonservice.utils.AssertUtil;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,8 +11,6 @@ import java.util.List;
 /**
  * Created with IntelliJ IDEA
  *
- * @author MiaoWoo
- * Created on 2018/4/23 14:51.
  */
 @Data
 @Builder
@@ -34,7 +32,7 @@ public class PageData<T> {
      * @return {@link PageData}
      */
     public static <T> PageData<T> page(List<T> list) {
-        Assert.require(list instanceof com.github.pagehelper.Page, "分页结果无法转换为Page对象 请检查是否为Mapper返回的原始对象(服务器内部错误)");
+        AssertUtil.require(list instanceof com.github.pagehelper.Page, "分页结果无法转换为Page对象 请检查是否为Mapper返回的原始对象(服务器内部错误)");
         return page(list, (com.github.pagehelper.Page<T>) list);
     }
 
@@ -82,7 +80,7 @@ public class PageData<T> {
     }
 
     public static <T> PageData<T> page(List<T> list, long count, int size, int num) {
-        Assert.requireNonNull(list, "分页结果不得为Null(服务器内部错误)");
+        AssertUtil.requireNonNull(list, "分页结果不得为Null(服务器内部错误)");
         return PageData.<T>builder().list(list).count(count).size(size).num(num).build();
     }
 }

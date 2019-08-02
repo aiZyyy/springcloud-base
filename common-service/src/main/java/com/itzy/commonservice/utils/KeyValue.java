@@ -240,12 +240,12 @@ public class KeyValue extends HashMap<String, Object> {
      * @return
      */
     public KeyValue page(Collection<?> list) {
-        Assert.require(list instanceof Page, "分页结果无法转换为Page对象 请检查是否为Mapper返回的原始对象(服务器内部错误)");
+        AssertUtil.require(list instanceof Page, "分页结果无法转换为Page对象 请检查是否为Mapper返回的原始对象(服务器内部错误)");
         return page(list, (Page) list);
     }
 
     public KeyValue page(Collection<?> list, Page page) {
-        Assert.requireNonNull(list, "分页结果不得为Null(服务器内部错误)");
+        AssertUtil.requireNonNull(list, "分页结果不得为Null(服务器内部错误)");
         KeyValue kv = new KeyValue();
         kv.put("list", list);
         kv.setPage(page);
@@ -254,7 +254,7 @@ public class KeyValue extends HashMap<String, Object> {
     }
 
     private void setPage(Page page) {
-        Assert.requireNonNull(page, "分页信息不得为Null(服务器内部错误)");
+        AssertUtil.requireNonNull(page, "分页信息不得为Null(服务器内部错误)");
         put("num", page.getPageNum());
         put("size", page.getPageSize());
         put("count", page.getTotal());
