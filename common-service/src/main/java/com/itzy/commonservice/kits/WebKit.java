@@ -1,6 +1,5 @@
-package com.itzy.commonservice.utils;
+package com.itzy.commonservice.kits;
 
-import com.itzy.commonservice.kits.SessionKit;
 import lombok.SneakyThrows;
 import lombok.val;
 import org.apache.commons.lang3.StringUtils;
@@ -15,11 +14,12 @@ import java.util.Objects;
 import java.util.Optional;
 
 /**
- * @Author: ZY
- * @Date: 2019/8/2 15:49
- * @Version 1.0
+ * Created with IntelliJ IDEA
+ *
+ * @author MiaoWoo
+ * Created on 2017/6/30 15:40.
  */
-public class WebUtil {
+public class WebKit {
     /**
      * @return 获得当前请求
      */

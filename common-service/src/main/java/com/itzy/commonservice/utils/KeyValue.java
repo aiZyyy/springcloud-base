@@ -3,7 +3,6 @@ package com.itzy.commonservice.utils;
 import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.Page;
 
-import com.itzy.commonservice.kits.WebKit;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.util.LinkedMultiValueMap;
@@ -172,7 +171,7 @@ public class KeyValue extends HashMap<String, Object> {
      * @return {@link KeyValue}
      */
     public static KeyValue rd(int status, String msg) {
-        WebKit.getResponse().setStatus(status);
+        WebUtil.getResponse().setStatus(status);
         return new KeyValue(STATUS, status).add(MSG, msg);
     }
 
@@ -186,7 +185,7 @@ public class KeyValue extends HashMap<String, Object> {
      * @return {@link KeyValue}
      */
     public static KeyValue rd(int status, Object data) {
-        WebKit.getResponse().setStatus(status);
+        WebUtil.getResponse().setStatus(status);
         return new KeyValue(STATUS, status).add(DATA, data);
     }
 
@@ -200,7 +199,7 @@ public class KeyValue extends HashMap<String, Object> {
      * @return {@link KeyValue}
      */
     public static KeyValue rd(int status, String msg, Object data) {
-        WebKit.getResponse().setStatus(status);
+        WebUtil.getResponse().setStatus(status);
         return new KeyValue(STATUS, status).add(MSG, msg).add(DATA, data);
     }
 
