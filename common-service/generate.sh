@@ -95,3 +95,5 @@ EOF
 
 # 执行Maven构建
 mvn mybatis-generator:generate
+
+sleep 1000000
