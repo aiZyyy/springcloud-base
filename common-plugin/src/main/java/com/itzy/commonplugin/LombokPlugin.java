@@ -19,10 +19,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-/**
- * Created By tangbj On 2019/6/19
- * Description: 自定义lombok插件生成
- */
 public class LombokPlugin extends PluginAdapter {
     private String javadoc = "/**\n * Created with Mybatis Generator Plugin\n *\n * @Author wsmhz\n * @Date " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy/MM/dd hh:mm")) + "\n */";
     private FullyQualifiedJavaType repoAnnotation = new FullyQualifiedJavaType("org.springframework.stereotype.Repository");

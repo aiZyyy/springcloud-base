@@ -10,11 +10,6 @@ import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.IntrospectedTable;
 import org.mybatis.generator.api.dom.java.Field;
 import org.mybatis.generator.internal.DefaultCommentGenerator;
-
-/**
- * Created By tangbj On 2019/6/19
- * Description: 实体类中字段增加注释
- */
 public class CommentGenerator extends DefaultCommentGenerator {
 
     @Override
