@@ -5,65 +5,65 @@ spring:
   application:
     name: springcloud-demo
   freemarker:
-    #Ö¸¶¨HttpServletRequestµÄÊôĞÔÊÇ·ñ¿ÉÒÔ¸²¸ÇcontrollerµÄmodelµÄÍ¬ÃûÏî
+    #æŒ‡å®šHttpServletRequestçš„å±æ€§æ˜¯å¦å¯ä»¥è¦†ç›–controllerçš„modelçš„åŒåé¡¹
     allow-request-override: true
-    #Ö¸¶¨HttpSessionµÄÊôĞÔÊÇ·ñ¿ÉÒÔ¸²¸ÇcontrollerµÄmodelµÄÍ¬ÃûÏî
+    #æŒ‡å®šHttpSessionçš„å±æ€§æ˜¯å¦å¯ä»¥è¦†ç›–controllerçš„modelçš„åŒåé¡¹
     allow-session-override: true
-    #ÊÇ·ñ¿ªÆôtemplate caching.
+    #æ˜¯å¦å¼€å¯template caching.
     cache: true
-    #Éè¶¨TemplateµÄ±àÂë.
+    #è®¾å®šTemplateçš„ç¼–ç .
     charset: UTF-8
-    #ÊÇ·ñ¼ì²étemplatesÂ·¾¶ÊÇ·ñ´æÔÚ.
+    #æ˜¯å¦æ£€æŸ¥templatesè·¯å¾„æ˜¯å¦å­˜åœ¨.
     check-template-location: true
-    #Éè¶¨Content-Type.
+    #è®¾å®šContent-Type.
     content-type: text/html
-    #ÊÇ·ñÔÊĞímvcÊ¹ÓÃfreemarker.
+    #æ˜¯å¦å…è®¸mvcä½¿ç”¨freemarker.
     enabled: true
-    #Éè¶¨ËùÓĞrequestµÄÊôĞÔÔÚmergeµ½Ä£°åµÄÊ±ºò£¬ÊÇ·ñÒª¶¼Ìí¼Óµ½modelÖĞ.
+    #è®¾å®šæ‰€æœ‰requestçš„å±æ€§åœ¨mergeåˆ°æ¨¡æ¿çš„æ—¶å€™ï¼Œæ˜¯å¦è¦éƒ½æ·»åŠ åˆ°modelä¸­.
     expose-request-attributes: true
-    #Éè¶¨ËùÓĞHttpSessionµÄÊôĞÔÔÚmergeµ½Ä£°åµÄÊ±ºò£¬ÊÇ·ñÒª¶¼Ìí¼Óµ½modelÖĞ.
+    #è®¾å®šæ‰€æœ‰HttpSessionçš„å±æ€§åœ¨mergeåˆ°æ¨¡æ¿çš„æ—¶å€™ï¼Œæ˜¯å¦è¦éƒ½æ·»åŠ åˆ°modelä¸­.
     expose-session-attributes: true
-    #Éè¶¨ÊÇ·ñÒÔspringMacroRequestContextµÄĞÎÊ½±©Â¶RequestContext¸øSpring¡¯s macro libraryÊ¹ÓÃ
+    #è®¾å®šæ˜¯å¦ä»¥springMacroRequestContextçš„å½¢å¼æš´éœ²RequestContextç»™Springâ€™s macro libraryä½¿ç”¨
     expose-spring-macro-helpers: true
-    #ÊÓÍ¼¼ÓÔØË³Ğò
+    #è§†å›¾åŠ è½½é¡ºåº
     order: 0
-    #ÊÇ·ñÓÅÏÈ´ÓÎÄ¼şÏµÍ³¼ÓÔØtemplate£¬ÒÔÖ§³ÖÈÈ¼ÓÔØ£¬Ä¬ÈÏÎªtrue
+    #æ˜¯å¦ä¼˜å…ˆä»æ–‡ä»¶ç³»ç»ŸåŠ è½½templateï¼Œä»¥æ”¯æŒçƒ­åŠ è½½ï¼Œé»˜è®¤ä¸ºtrue
     prefer-file-system-access: true
-    #Éè¶¨freemarkerÄ£°åµÄÇ°×º.
+    #è®¾å®šfreemarkeræ¨¡æ¿çš„å‰ç¼€.
     #prefix:
-    #Ö¸¶¨RequestContextÊôĞÔµÄÃû.
+    #æŒ‡å®šRequestContextå±æ€§çš„å.
     request-context-attribute: request
-    #Éè¶¨FreeMarker keys.
+    #è®¾å®šFreeMarker keys.
     settings:
-      #Èç¹û±äÁ¿Îªnull,×ª»¯Îª¿Õ×Ö·û´®£¬±ÈÈç×ö±È½ÏµÄÊ±ºò°´ÕÕ¿Õ×Ö·û´®×ö±È½Ï
+      #å¦‚æœå˜é‡ä¸ºnull,è½¬åŒ–ä¸ºç©ºå­—ç¬¦ä¸²ï¼Œæ¯”å¦‚åšæ¯”è¾ƒçš„æ—¶å€™æŒ‰ç…§ç©ºå­—ç¬¦ä¸²åšæ¯”è¾ƒ
       classic_compatible: true
-      #È¥µô¶àÓàµÄ¿Õ¸ñ£¬·Ç³£ÓĞÓÃ
+      #å»æ‰å¤šä½™çš„ç©ºæ ¼ï¼Œéå¸¸æœ‰ç”¨
       whitespace_stripping: true
-      #Ä£°å¸üĞÂÊ±¼ä£¬ÕâÀïÅäÖÃÊÇ1Ãë¸üĞÂÒ»´Î£¬ÕıÊ½»·¾³ÉèÖÃÎª3600Ãë
+      #æ¨¡æ¿æ›´æ–°æ—¶é—´ï¼Œè¿™é‡Œé…ç½®æ˜¯1ç§’æ›´æ–°ä¸€æ¬¡ï¼Œæ­£å¼ç¯å¢ƒè®¾ç½®ä¸º3600ç§’
       template_update_delay: 1
-      #ÖĞ¹ú
+      #ä¸­å›½
       locale: zh_CN
-      #±àÂëutf8
+      #ç¼–ç utf8
       default_encoding: utf_8
-      #url±àÂëutf8
+      #urlç¼–ç utf8
       url_escaping_charset: utf_8
-      #ÏÔÊ¾ÈÕÆÚ¸ñÊ½
+      #æ˜¾ç¤ºæ—¥æœŸæ ¼å¼
       date_format: yyyy-MM-dd
-      #ÏÔÊ¾Ê±¼ä¸ñÊ½
+      #æ˜¾ç¤ºæ—¶é—´æ ¼å¼
       time_format: HH:mm:ss
-      #ÏÔÊ¾ÈÕÆÚÊ±¼ä¸ñÊ½
+      #æ˜¾ç¤ºæ—¥æœŸæ—¶é—´æ ¼å¼
       datetime_format: yyyy-MM-dd HH:mm:ss
-      #Êı×Ö¸ñÊ½
+      #æ•°å­—æ ¼å¼
       number_format: 0.######
       output_encoding: UTF-8
-      #²¼¶ûĞÍ¸ñÊ½
+      #å¸ƒå°”å‹æ ¼å¼
       boolean_format: true,false
-      #ºê¶¨Òå
+      #å®å®šä¹‰
       #auto_import="/common/index.ftl" as ui
       tag_syntax: auto_detect
-    #Éè¶¨Ä£°åµÄºó×º.
+    #è®¾å®šæ¨¡æ¿çš„åç¼€.
     suffix: .ftl
-    #Éè¶¨Ä£°åµÄ¼ÓÔØÂ·¾¶£¬¶à¸öÒÔ¶ººÅ·Ö¸ô£¬Ä¬ÈÏ: ["classpath:/templates/"]
+    #è®¾å®šæ¨¡æ¿çš„åŠ è½½è·¯å¾„ï¼Œå¤šä¸ªä»¥é€—å·åˆ†éš”ï¼Œé»˜è®¤: ["classpath:/templates/"]
     template-loader-path: classpath:/templates/
-    #Ö¸¶¨Ê¹ÓÃÄ£°åµÄÊÓÍ¼ÁĞ±í. White list of view names that can be resolved.
+    #æŒ‡å®šä½¿ç”¨æ¨¡æ¿çš„è§†å›¾åˆ—è¡¨. White list of view names that can be resolved.
     #view-names
