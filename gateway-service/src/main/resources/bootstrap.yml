@@ -1,17 +1,14 @@
-server:
-  port:8085
+spring.application.name: @project.artifactId@
 
+eureka.instance.instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
 
-spring:
-  application:
-    name: gateway
-  cloud:
-    gateway:
-      routes:
-        #netty 路由过滤器，http或https开头
-        - id: app1-route
-          uri: http://localhost:9001
-          predicates:
-            - Path=/app1/**
-          filters:
-          #转发请求时去掉1级前缀
+spring.cloud.config.fail-fast: ${SPRING_CLOUD_CONFIG_FAIL-FAST:true}
+spring.cloud.config.retry.max-attempts: ${SPRING_CLOUD_CONFIG_RETRY_MAX-ATTEMPTS:60}
+spring.cloud.config.retry.max-interval: ${SPRING_CLOUD_CONFIG_RETRY_MAX-INTERVAL:10000}
+spring.cloud.config.retry.initial-interval: ${SPRING_CLOUD_CONFIG_RETRY_INITIAL-INTERVAL:1000}
+
+spring.cloud.config.label: ${SPRING_CLOUD_CONFIG_LABEL:master}
+spring.cloud.config.profile: ${SPRING_CLOUD_CONFIG_PROFILE:local}
+spring.cloud.config.uri: ${SPRING_CLOUD_CONFIG_URI:http://localhost:8083}
+
+spring.main.allow-bean-definition-overriding: true
