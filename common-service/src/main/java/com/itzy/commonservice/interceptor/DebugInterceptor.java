@@ -36,9 +36,9 @@ public class DebugInterceptor extends HandlerInterceptorAdapter {
     private ThreadLocal<Object[]> paramsCache = ThreadLocal.withInitial(() -> null);
     private ThreadLocal<Object> resultCache = ThreadLocal.withInitial(() -> null);
 
-    @Pointcut("execution(public * com.sixi.*.controller.*.*(..)) ||" +
-              "execution(public * com.sixi.*.*.controller.*.*(..)) ||" +
-              "execution(public com.sixi.micro.common.utils.KeyValue com.sixi.micro.common.exception.handler.GlobalExceptionHandler.*(..)) ")
+    @Pointcut("execution(public * com.itzy.*.controller.*.*(..)) ||" +
+              "execution(public * com.itzy.*.*.controller.*.*(..)) ||" +
+              "execution(public com.itzy.commonservice.utils.KeyValue com.itzy.commonservice.exception.handler.GlobalExceptionHandler.*(..)) ")
     public void resultAop() {}
 
     @Order(2)

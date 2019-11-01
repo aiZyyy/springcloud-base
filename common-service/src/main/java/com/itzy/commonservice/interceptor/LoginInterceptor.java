@@ -22,7 +22,7 @@ import java.util.Optional;
 @Configuration
 @ConditionalOnBean(LoginHandler.class)
 public class LoginInterceptor extends HandlerInterceptorAdapter {
-    @Value("${sixi-micro-service-common.message.no-login:User Not Login!}")
+    @Value("${itzy-micro-service-common.message.no-login:User Not Login!}")
     private String message;
     private LoginHandler loginHandler;
 

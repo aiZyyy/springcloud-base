@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Configuration
 @ConditionalOnBean({LoginHandler.class, UserHandler.class})
-@ConditionalOnProperty(name = "sixi-micro-service-common.http.limit.enabled", havingValue = "true")
+@ConditionalOnProperty(name = "itzy-micro-service-common.http.limit.enabled", havingValue = "true")
 public class LimitInterceptor extends HandlerInterceptorAdapter {
     private static final String MARK = "LIMIT";
     @Resource

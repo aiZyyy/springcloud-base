@@ -12,14 +12,14 @@ DB_HOST="dev.mysql.i.sixi.com"
 # 数据库端口
 DB_PORT=3306
 # 数据库名称
-DB_NAME="erp_admin"
+DB_NAME="ali_ranking"
 # 数据库用户名
 DB_USER="root"
 # 数据库密码
 DB_PASS="root"
 
 # 表名 多个表用空格分隔 所有的表用 % 代替
-TABLES='admin_manage'
+TABLES='contract_task_work'
 
 ###############################
 # 请勿修改以下部分代码 除非你看得懂 #

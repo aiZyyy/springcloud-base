@@ -19,7 +19,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Configuration
 @ConditionalOnBean(PermissionHandler.class)
 public class PermissionInterceptor extends HandlerInterceptorAdapter {
-    @Value("${sixi-micro-service-common.message.no-permission:No Permission!}")
+    @Value("${itzy-micro-service-common.message.no-permission:No Permission!}")
     private String message;
     private PermissionHandler permissionHandler;
     private Map<String, String> cachePermission = new ConcurrentHashMap<>();
